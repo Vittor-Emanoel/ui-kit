@@ -5,11 +5,7 @@ import { fn } from "@storybook/test";
 const meta = {
   title: "Components/Button",
   component: Button,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
-
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
@@ -18,18 +14,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    children: "Button",
     variant: "default",
   },
 };
 
 export const Secondary: Story = {
   args: {
+    children: "Button",
     variant: "secondary",
   },
 };
 
 export const Large: Story = {
   args: {
+    children: "Button",
     variant: "outline",
     size: "lg",
   },
@@ -37,6 +36,7 @@ export const Large: Story = {
 
 export const Small: Story = {
   args: {
+    children: "Button",
     size: "sm",
     variant: "ghost",
   },
