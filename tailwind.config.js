@@ -1,10 +1,15 @@
+const content = [ "./src/**/*.{js,ts,jsx,tsx}"]
+
+if(process.env.NODE_ENV === 'production'){
+  content.push('!./src/**/*.stories.{js,ts,jsx,tsx}')
+}
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
     safelist: ['dark', 'light'],
     darkMode: ["class"],
-    content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+    content,
   theme: {
   	extend: {
   		borderRadius: {

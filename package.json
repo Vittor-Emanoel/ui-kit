@@ -1,8 +1,30 @@
 {
-  "name": "ui-kit",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "uiii-kit",
+  "version": "0.0.5",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "default":"./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/index.css",
+    "./utils": {
+      "import": "./dist/utils.mjs",
+      "default":"./dist/utils.mjs",
+      "require": "./dist/utils.js",
+      "types": "./dist/utils.d.ts"
+    }
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "tsup",
@@ -18,8 +40,7 @@
     "lucide-react": "^0.438.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -41,6 +62,7 @@
     "postcss": "^8.4.43",
     "storybook": "^8.2.9",
     "tailwindcss": "^3.4.10",
+    "tailwindcss-animate": "^1.0.7",
     "tsup": "^8.2.4",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
