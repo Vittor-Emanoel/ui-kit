@@ -1,33 +1,37 @@
 {
   "name": "uiii-kit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "files": [
     "dist"
   ],
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/src/index.js",
+  "module": "./dist/src/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "default":"./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/src/index.mjs",
+      "types": "./dist/src/index.d.ts",
+      "require": "./dist/src/index.js"
     },
-    "./styles.css": "./dist/index.css",
+    "./styles.css": "./dist/src/styles/index.css",
     "./utils": {
-      "import": "./dist/utils.mjs",
-      "default":"./dist/utils.mjs",
-      "require": "./dist/utils.js",
-      "types": "./dist/utils.d.ts"
+      "import": "./dist/src/utils.mjs",
+      "types": "./dist/src/utils.d.ts",
+      "require": "./dist/src/utils.js"
+    },
+    "./tailwind-preset": {
+      "import": "./dist/tailwind.config.mjs",
+      "types": "./dist/tailwind.config.d.ts",
+      "require": "./dist/tailwind.config.js"
     }
   },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "tsup",
+    "build-watch": "tsup --watch",
     "build:storybook": "storybook build"
   },
   "dependencies": {
