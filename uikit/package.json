@@ -7,6 +7,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
   "main": "./dist/src/index.js",
   "module": "./dist/src/index.mjs",
   "types": "./dist/src/index.d.ts",
@@ -14,19 +15,21 @@
     ".": {
       "import": "./dist/src/index.mjs",
       "types": "./dist/src/index.d.ts",
-      "default": "./dist/src/index.js",  
-      "require": "./dist/src/index.js"
+      "require": "./dist/src/index.js",
+      "default": "./dist/src/index.mjs"
     },
     "./styles.css": "./dist/src/styles/index.css",
     "./utils": {
       "import": "./dist/src/utils.mjs",
       "require": "./dist/src/utils.js",
-      "types": "./dist/src/utils.d.ts"
+      "types": "./dist/src/utils.d.ts",
+      "default": "./dist/src/utils.mjs"
     },
     "./tailwind-preset": {
       "import": "./dist/tailwind.config.mjs",
       "require": "./dist/tailwind.config.js",
-      "types": "./dist/tailwind.config.d.ts"
+      "types": "./dist/tailwind.config.d.ts",
+      "default": "./dist/tailwind.config.mjs"
     }
   },
   "scripts": {
@@ -43,9 +46,17 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.438.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
+    "zod": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+     "optional": false
+    }
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

@@ -2,17 +2,11 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   entry: [
-    "src/index.ts",
-    "src/utils.ts",
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.stories.{ts,tsx}",
     "tailwind.config.ts",
     "src/styles/index.css",
   ],
-  // entry: {
-  //   index: "src/index.ts",
-  //   utils: "src/utils.ts",
-  //   "tailwind-preset": "tailwind.config.ts",
-  //   styles: "src/styles/index.css",
-  // },
   outDir: "dist",
   minify: true,
   format: ["cjs", "esm"],
