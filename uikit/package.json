@@ -9,23 +9,24 @@
   },
   "main": "./dist/src/index.js",
   "module": "./dist/src/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/src/index.mjs",
       "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js",  
       "require": "./dist/src/index.js"
     },
     "./styles.css": "./dist/src/styles/index.css",
     "./utils": {
       "import": "./dist/src/utils.mjs",
-      "types": "./dist/src/utils.d.ts",
-      "require": "./dist/src/utils.js"
+      "require": "./dist/src/utils.js",
+      "types": "./dist/src/utils.d.ts"
     },
     "./tailwind-preset": {
       "import": "./dist/tailwind.config.mjs",
-      "types": "./dist/tailwind.config.d.ts",
-      "require": "./dist/tailwind.config.js"
+      "require": "./dist/tailwind.config.js",
+      "types": "./dist/tailwind.config.d.ts"
     }
   },
   "scripts": {
